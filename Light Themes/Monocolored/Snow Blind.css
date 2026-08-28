@@ -2,32 +2,32 @@ html:not(.style-scope)
   { 
       
       
-/*===================Start of custom variables==============================*/           
-      
-      --cust-ytmusic-play-nav-color: #fff;
-      --cust-ytmusic-dark-background: #fff;
-      --cust-ytmusic-dark-foreground: #fff;
-      
-      --cust-ytmusic-light-text-1: #929392e6;
-      --cust-ytmusic-light-2: #b5b5b5; 
-      --cust-ytmusic-light-3: #d1d1d1;
-      --cust-ytmusic-light-4: #b7b7b78f;
-      --cust-ytmusic-light-5: #d9d9d9;
-      
-      --cust-ytmusic-medium-1: #b5b5b5c2;
-      --cust-ytmusic-medium-2: #d3d3d3;
-      --cust-ytmusic-medium-3: #c2c2c2;    
-      --cust-ytmusic-medium-4: #8d8d8d;
-      --cust-ytmusic-medium-5: #b7b7b7;
-      
-      --cust-ytmusic-subscribe-color: #c2c2c2;
-      --cust-ytmusic-nowplaying-color: #b9b9b9;
-      --cust-ytmusic-playbutton-color:#b7b7b7; 
-      --cust-ytmusic-tertiary-nav-button-color: #b7b7b7;
-        
-      --cust-ytmusic-main-text-1: #bbb;
-      --cust-ytmusic-header-text-1: #b9b9b9;
-      --cust-ytmusic-header-text-2: #c6c6c6;
+/*===================Start of custom variables==============================*/
+
+      --cust-ytmusic-play-nav-color: #f8f8f8;
+      --cust-ytmusic-dark-background: #ffffff;
+      --cust-ytmusic-dark-foreground: #f5f5f5;
+
+      --cust-ytmusic-light-text-1: #1a1a1a;
+      --cust-ytmusic-light-2: #2d2d2d;
+      --cust-ytmusic-light-3: #3a3a3a;
+      --cust-ytmusic-light-4: #4a4a4a;
+      --cust-ytmusic-light-5: #1f1f1f;
+
+      --cust-ytmusic-medium-1: #5a5a5a;
+      --cust-ytmusic-medium-2: #404040;
+      --cust-ytmusic-medium-3: #4d4d4d;
+      --cust-ytmusic-medium-4: #6d6d6d;
+      --cust-ytmusic-medium-5: #555555;
+
+      --cust-ytmusic-subscribe-color: #505050;
+      --cust-ytmusic-nowplaying-color: #3d3d3d;
+      --cust-ytmusic-playbutton-color:#2a2a2a;
+      --cust-ytmusic-tertiary-nav-button-color: #464646;
+
+      --cust-ytmusic-main-text-1: #333;
+      --cust-ytmusic-header-text-1: #252525;
+      --cust-ytmusic-header-text-2: #2e2e2e;
       
       
       
@@ -127,25 +127,81 @@ body
             background: var(--cust-ytmusic-play-nav-color) !important 
         }
     
-/*hide the youtube logo at the top left*/    
-        .yt-simple-endpoint[aria-label="Home"] 
+/*hide the youtube logo at the top left*/
+        .yt-simple-endpoint[aria-label="Home"]
         {
-            visibility:hidden !important 
+            visibility:hidden !important
         }
-    
-/*Home, Explore, Library colors*/
-    
+
+/*Guide button (hamburger menu) - make it black*/
+        #guide-button.ytmusic-nav-bar,
+        #guide-button.ytmusic-nav-bar yt-icon-button,
+        #guide-button.ytmusic-nav-bar yt-icon
+        {
+            color: #1a1a1a !important;
+            --iron-icon-fill-color: #1a1a1a !important
+        }
+
+/*Home, Explore, Library colors - Navigation icons*/
+
         ytmusic-pivot-bar-item-renderer:hover, ytmusic-pivot-bar-item-renderer.iron-selected  /*highlighted word*/
     {
-        color: var(--cust-ytmusic-light-5) !important
+        color: #000000 !important
     }
         ytmusic-pivot-bar-item-renderer /*non-selected item*/
     {
-        color: var(--cust-ytmusic-light-4) !important
+        color: #2a2a2a !important
+    }
+        ytmusic-pivot-bar-item-renderer yt-icon
+    {
+        color: #1a1a1a !important
     }
         ytmusic-search-box  /*search button colors*/
     {
-        color: var(--cust-ytmusic-light-4) !important
+        color: #2a2a2a !important
+    }
+        ytmusic-search-box yt-icon
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Search box - completely flat, uniform white, no gradients */
+    ytmusic-search-box,
+    ytmusic-search-box *
+    {
+        background-image: none !important;
+        border: none !important;
+        box-shadow: none !important
+    }
+
+    /* Search box input field - black text, white background, no gradient */
+    ytmusic-search-box #input,
+    ytmusic-search-box input,
+    ytmusic-search-box .search-box
+    {
+        color: #1a1a1a !important;
+        background-image: none !important;
+        caret-color: #1a1a1a !important;
+        border: none !important;
+        box-shadow: none !important
+    }
+
+    /* Remove any gradient backgrounds from search container */
+    ytmusic-search-box .search-container,
+    ytmusic-search-box[has-query] .search-container,
+    ytmusic-search-box[opened] .search-container
+    {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        background-image: none !important;
+        border: none !important;
+        box-shadow: none !important
+    }
+
+    /* Placeholder text should be gray */
+    ytmusic-search-box #placeholder
+    {
+        color: #6d6d6d !important
     }
     
     
@@ -239,6 +295,12 @@ ytmusic-player-page
             --paper-slider-knob-start-color: var(--ytmusic-color-white1) !important;
             --paper-slider-knob-start-border-color: var(--ytmusic-color-white1) !important
             }
+
+        #hover-time-info.ytmusic-player-bar
+        {
+            color: var(--ytmusic-color-white1) !important;
+            background-color: var(--cust-ytmusic-dark-foreground) !important
+        }
 /*volume slider*/    
     paper-slider#volume-slider
     {
@@ -299,7 +361,7 @@ ytmusic-player-page
     /*Now playing circle*/
    div.content-wrapper.style-scope.ytmusic-play-button-renderer
     {
-        background: var(--cust-ytmusic-nowplaying-color) !important
+        background: hsla(0, 0%, 100%, 0.8) !important
     }
     
     
@@ -373,26 +435,35 @@ ytmusic-player-page
     
     
     
-/* scroll left and right carousel buttons */        
-    .previous-items-button.ytmusic-carousel, .next-items-button.ytmusic-carousel 
+/* scroll left and right carousel buttons */
+    .previous-items-button.ytmusic-carousel, .next-items-button.ytmusic-carousel
     {
-        background-color: var(--ytmusic-color-white1-alpha70) !important;
-        color: var(--ytmusic-color-black1) !important
+        background-color: rgba(26, 26, 26, 0.75) !important;
+        color: #ffffff !important
+    }
+    .previous-items-button.ytmusic-carousel:hover, .next-items-button.ytmusic-carousel:hover
+    {
+        background-color: rgba(26, 26, 26, 0.9) !important
     }
 
-/* play button that pops up over album art to play immediately */    
+/* play button that pops up over album art to play immediately */
     .content-wrapper.ytmusic-play-button-renderer, ytmusic-play-button-renderer:hover .content-wrapper.ytmusic-play-button-renderer, ytmusic-play-button-renderer:focus .content-wrapper.ytmusic-play-button-renderer
     {
-        background: var(--ytmusic-color-white1-alpha70) !important;
-        --ytmusic-play-button-icon-color: var(--ytmusic-color-black1) !important;
-        --paper-spinner-color: var(--yt-spec-themed-blue) !important
+        background: rgba(167, 167, 167, 0.85) !important;
+        --ytmusic-play-button-icon-color: #ffffff !important;
+        --paper-spinner-color: #ffffff !important
     }
     
    
-/* like button color */    
-    paper-icon-button.ytmusic-like-button-renderer 
+/* like and dislike button colors */
+    paper-icon-button.ytmusic-like-button-renderer,
+    ytmusic-like-button-renderer yt-icon-button,
+    ytmusic-like-button-renderer yt-button-shape,
+    yt-button-shape.dislike
     {
-        color: var(--cust-ytmusic-medium-3) !important
+        color: #1a1a1a !important;
+        --yt-spec-icon-inactive: #1a1a1a !important;
+        --iron-icon-fill-color: #1a1a1a !important
     }
     
 /*settings highlighted*/
@@ -409,6 +480,843 @@ ytmusic-player-page
     div.background-gradient.style-scope.ytmusic-browse-response
     {
     background-image: linear-gradient(to bottom, var(--cust-ytmusic-dark-background), var(--cust-ytmusic-dark-background)) !important;
+    }
+
+/* Additional light theme improvements */
+    /* Card hover states */
+    ytmusic-two-row-item-renderer:hover
+    {
+        background-color: #f0f0f0 !important;
+    }
+
+    /* Dividers and borders */
+    #divider.ytmusic-guide-section-renderer,
+    #nav-bar-divider.ytmusic-nav-bar
+    {
+        border-color: #e0e0e0 !important;
+    }
+
+    /* Search box styling - flat white, no borders or shadows */
+    ytmusic-search-box .search-box
+    {
+        background-color: #ffffff !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Dialog and popup backgrounds */
+    ytmusic-popup-container,
+    tp-yt-paper-dialog
+    {
+        background-color: #ffffff !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* Menu items hover */
+    ytmusic-menu-service-item-renderer:hover,
+    ytmusic-menu-navigation-item-renderer:hover
+    {
+        background-color: #f0f0f0 !important;
+    }
+
+    /* Account menu dropdown (Settings, Help, etc.) - white background with black text */
+    .ytmusicMultiPageMenuRendererSections,
+    .ytmusicMultiPageMenuRendererSections > *,
+    .ytmusicMultiPageMenuRendererMenuContainer,
+    ytd-simple-menu-header-renderer,
+    .ytmusicMultiPageMenuRendererFooter,
+    .ytmusicMultiPageMenuRendererFooter > *,
+    .style-scope.ytd-multi-page-menu-renderer,
+    tp-yt-paper-listbox.ytmusic-menu-popup-renderer,
+    #contentWrapper.tp-yt-iron-dropdown > *
+    {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+        color: #1a1a1a !important
+    }
+
+    /* Account header section - white background with black text */
+    ytd-active-account-header-renderer,
+    ytd-active-account-header-renderer #header,
+    ytd-active-account-header-renderer #channel-container,
+    ytd-active-account-header-renderer #container
+    {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+        color: #1a1a1a !important
+    }
+
+    /* Account header text elements - all must be black */
+    ytd-active-account-header-renderer #account-name,
+    ytd-active-account-header-renderer #email,
+    ytd-active-account-header-renderer #channel-handle,
+    ytd-active-account-header-renderer #manage-account,
+    ytd-active-account-header-renderer yt-formatted-string
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Manage Google Account link - blue color for visibility */
+    ytd-active-account-header-renderer #manage-account
+    {
+        color: #1a67e0 !important
+    }
+
+    /* Menu item text should be black */
+    ytmusic-menu-navigation-item-renderer,
+    ytmusic-menu-service-item-renderer,
+    ytmusic-toggle-menu-service-item-renderer,
+    .yt-simple-endpoint.ytmusic-menu-navigation-item-renderer,
+    tp-yt-paper-item.ytmusic-menu-service-item-download-renderer
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Menu item text elements */
+    .text.ytmusic-menu-navigation-item-renderer,
+    .text.ytmusic-menu-service-item-renderer,
+    .text.ytmusic-toggle-menu-service-item-renderer
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Account item hover */
+    tp-yt-paper-icon-item.ytd-account-item-renderer:hover
+    {
+        background-color: #f0f0f0 !important
+    }
+
+    /* Login/Sign-in button - white background with black text */
+    ytmusic-nav-bar .sign-in-link,
+    ytmusic-nav-bar a.sign-in-link,
+    #buttons.ytmusic-nav-bar ytmusic-button-renderer,
+    ytmusic-button-renderer.sign-in-button
+    {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
+        border: 1px solid #e0e0e0 !important
+    }
+
+    /* Settings Dialog - white background with black text */
+    ytmusic-dialog,
+    ytmusic-dialog tp-yt-paper-dialog,
+    ytmusic-dialog tp-yt-paper-dialog-scrollable,
+    ytmusic-settings-page,
+    tp-yt-paper-dialog-scrollable #scrollable,
+    #content.ytmusic-dialog,
+    tp-yt-paper-dialog
+    {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+        color: #1a1a1a !important
+    }
+
+    /* All text within settings dialog must be black */
+    ytmusic-dialog *,
+    ytmusic-settings-page *,
+    ytmusic-dialog yt-formatted-string,
+    ytmusic-settings-page yt-formatted-string
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Settings dialog header/top bar */
+    ytmusic-dialog .top-bar,
+    .top-bar.ytmusic-dialog
+    {
+        background-color: #f5f5f5 !important;
+        border-bottom: 1px solid #e0e0e0 !important
+    }
+
+    /* Settings dialog title */
+    .dialog-title.ytmusic-dialog,
+    ytmusic-dialog .dialog-title
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Settings category menu (left sidebar) */
+    .category-menu.ytmusic-settings-page,
+    tp-yt-paper-listbox.category-menu
+    {
+        background-color: #f8f8f8 !important;
+        border-right: 1px solid #e0e0e0 !important
+    }
+
+    /* Category menu items */
+    .category-menu-item.ytmusic-settings-page,
+    tp-yt-paper-item.category-menu-item
+    {
+        color: #1a1a1a !important;
+        background-color: transparent !important
+    }
+
+    /* Selected category item */
+    .category-menu-item.iron-selected.ytmusic-settings-page,
+    tp-yt-paper-item.category-menu-item.iron-selected
+    {
+        background-color: #e8e8e8 !important;
+        color: #000000 !important
+    }
+
+    /* Category menu item hover */
+    .category-menu-item.ytmusic-settings-page:hover,
+    tp-yt-paper-item.category-menu-item:hover
+    {
+        background-color: #eeeeee !important
+    }
+
+    /* Settings content panel (right side) */
+    ytmusic-setting-category-collection-renderer,
+    #items.ytmusic-setting-category-collection-renderer
+    {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important
+    }
+
+    /* Individual setting items */
+    ytmusic-setting-boolean-renderer,
+    iron-label.ytmusic-setting-boolean-renderer,
+    ytmusic-setting-single-option-menu-renderer
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Setting titles - must be black */
+    ytmusic-setting-boolean-renderer .title,
+    ytmusic-setting-single-option-menu-renderer .title,
+    ytmusic-setting-category-collection-renderer .title,
+    .menu-description.ytmusic-setting-single-option-menu-renderer
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Setting summary/description text */
+    .summary.ytmusic-setting-boolean-renderer,
+    .summary.ytmusic-setting-single-option-menu-renderer
+    {
+        color: #6d6d6d !important
+    }
+
+    /* Dropdown menu components - white background with black text */
+    tp-yt-paper-dropdown-menu,
+    tp-yt-paper-menu-button,
+    tp-yt-paper-input,
+    tp-yt-paper-input-container,
+    tp-yt-iron-input,
+    tp-yt-iron-dropdown,
+    .dropdown-content.ytmusic-setting-single-option-menu-renderer
+    {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important
+    }
+
+    /* Dropdown input text must be black */
+    tp-yt-paper-input input,
+    tp-yt-iron-input input,
+    .dropdown-trigger.tp-yt-paper-menu-button
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Dropdown menu items */
+    .dropdown-content.ytmusic-setting-single-option-menu-renderer .menu-item,
+    tp-yt-paper-listbox .menu-item
+    {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important
+    }
+
+    /* Dropdown menu items hover */
+    .dropdown-content.ytmusic-setting-single-option-menu-renderer .menu-item:hover,
+    tp-yt-paper-listbox .menu-item:hover
+    {
+        background-color: #f0f0f0 !important
+    }
+
+    /* Input underline/border */
+    .unfocused-line,
+    .focused-line
+    {
+        background-color: #e0e0e0 !important
+    }
+
+    /* Close button icon */
+    .close-icon.ytmusic-dialog yt-icon,
+    .back.ytmusic-dialog yt-icon
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Selected items in lists */
+    ytmusic-list-item-renderer[is-selected],
+    ytmusic-player-queue-item.selected
+    {
+        background-color: #e8e8e8 !important;
+    }
+
+    /* Ensure proper contrast for disabled elements */
+    [disabled]
+    {
+        opacity: 0.4 !important;
+    }
+
+    /* Make all icon buttons dark and visible on light background */
+    yt-icon-button,
+    ytmusic-menu-renderer yt-icon,
+    paper-icon-button
+    {
+        color: #2a2a2a !important;
+    }
+
+    yt-icon-button:hover,
+    paper-icon-button:hover
+    {
+        color: #1a1a1a !important;
+        background-color: rgba(0, 0, 0, 0.05) !important;
+    }
+
+    /* Ensure SVG icons inside buttons are dark */
+    yt-icon svg,
+    tp-yt-iron-icon svg
+    {
+        fill: currentColor !important;
+    }
+
+    /* Player bar icon buttons */
+    ytmusic-player-bar yt-icon-button,
+    ytmusic-player-bar paper-icon-button
+    {
+        color: #2a2a2a !important;
+    }
+
+    /* Sign in button */
+    .sign-in-link,
+    yt-button-renderer[is-paper-button]
+    {
+        color: #1a1a1a !important;
+        border-color: #2a2a2a !important;
+    }
+
+    /* Search suggestions - flat white background with black text, no gradients */
+    ytmusic-search-box #suggestion-list,
+    ytmusic-search-box[opened] #suggestion-list,
+    ytmusic-search-suggestions-section,
+    ytmusic-search-suggestion,
+    #suggestions.ytmusic-search-suggestions-section,
+    .search-container.ytmusic-search-box,
+    ytmusic-search-box #suggestions,
+    ytmusic-search-box[opened] #suggestions
+    {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        background-image: none !important;
+        box-shadow: none !important;
+        border: none !important
+    }
+
+    /* Individual suggestion hover state - flat light gray, no gradient */
+    ytmusic-search-suggestion:hover
+    {
+        background: #f0f0f0 !important;
+        background-color: #f0f0f0 !important;
+        background-image: none !important
+    }
+
+    /* All text within suggestions should be black */
+    ytmusic-search-suggestion yt-formatted-string,
+    ytmusic-search-suggestion .text,
+    ytmusic-search-suggestion .title,
+    ytmusic-search-suggestion .left-content,
+    ytmusic-search-suggestions-section yt-formatted-string,
+    ytmusic-search-suggestions-section .header
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Bold text highlighting in suggestions */
+    ytmusic-search-suggestion .bold,
+    ytmusic-search-suggestion yt-formatted-string .bold
+    {
+        color: #1a1a1a !important;
+        font-weight: 600 !important
+    }
+
+    /* Search suggestion icon (magnifying glass) should be dark gray */
+    ytmusic-search-suggestion .search-suggestion-icon,
+    ytmusic-search-suggestion yt-icon
+    {
+        color: #4a4a4a !important;
+        fill: #4a4a4a !important
+    }
+
+    /* Ripple effect on suggestions */
+    ytmusic-search-suggestion tp-yt-paper-ripple
+    {
+        color: rgba(26, 26, 26, 0.1) !important
+    }
+
+    /* Ripple effects on thumbnails and cards - light theme appropriate */
+    ytmusic-two-row-item-renderer tp-yt-paper-ripple,
+    ytmusic-two-row-item-renderer #ripple,
+    ytmusic-responsive-list-item-renderer tp-yt-paper-ripple,
+    ytmusic-card-shelf-renderer tp-yt-paper-ripple,
+    ytmusic-card-shelf-renderer #ripple-thumbnail-container,
+    .image-wrapper tp-yt-paper-ripple
+    {
+        color: rgba(0, 0, 0, 0.1) !important;
+        background: transparent !important
+    }
+
+    /* Thumbnail corner overlay (duration badges, etc.) */
+    #thumbnail-corner-overlay
+    {
+        background: transparent !important
+    }
+
+    /* Background overlay renderer - should not create solid black background */
+    ytmusic-background-overlay-renderer
+    {
+        opacity: 0 !important;
+        pointer-events: none !important
+    }
+
+    /* On hover, show only the play button with minimal overlay */
+    ytmusic-two-row-item-renderer:hover ytmusic-background-overlay-renderer,
+    ytmusic-responsive-list-item-renderer:hover ytmusic-background-overlay-renderer
+    {
+        opacity: 0.3 !important
+    }
+
+    /* Additional navigation and menu icons to ensure they're all black */
+    ytmusic-nav-bar yt-icon-button,
+    ytmusic-nav-bar paper-icon-button,
+    #menu-button.ytmusic-nav-bar,
+    #history-link.ytmusic-nav-bar yt-icon-button
+    {
+        color: #1a1a1a !important;
+        --iron-icon-fill-color: #1a1a1a !important
+    }
+
+    /* Guide (sidebar) icons should be black */
+    ytmusic-guide-entry-renderer yt-icon,
+    ytmusic-guide-renderer yt-icon
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Three-dot menu icons on cards */
+    ytmusic-menu-renderer yt-icon-button
+    {
+        color: #2a2a2a !important
+    }
+
+    /* COMPREHENSIVE FIX: Force ALL text to be black/dark */
+    yt-formatted-string,
+    .title,
+    .subtitle,
+    .byline,
+    .text,
+    .song-title,
+    .primary-text,
+    .secondary-text,
+    .action-text,
+    .descriptive-text
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Force all buttons and button text to be dark */
+    tp-yt-paper-button,
+    yt-button-renderer,
+    yt-button-shape,
+    button
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Force ALL icons to be black - comprehensive (but NOT thumbnail images) */
+    yt-icon,
+    tp-yt-iron-icon,
+    paper-icon-button yt-icon,
+    yt-icon-button yt-icon
+    {
+        color: #1a1a1a !important;
+        fill: #1a1a1a !important
+    }
+
+    /* Force SVG fills to be black - ONLY for icon SVGs, NOT thumbnail images */
+    yt-icon svg,
+    yt-icon svg path,
+    yt-icon svg g,
+    tp-yt-iron-icon svg,
+    tp-yt-iron-icon svg path,
+    tp-yt-iron-icon svg g
+    {
+        fill: #1a1a1a !important
+    }
+
+    /* Override iron-icon fill color variable - for icons only, not thumbnails */
+    yt-icon-button,
+    paper-icon-button,
+    ytmusic-menu-renderer,
+    ytmusic-player-bar,
+    ytmusic-nav-bar,
+    ytmusic-guide-renderer
+    {
+        --iron-icon-fill-color: #1a1a1a !important;
+        --yt-spec-icon-inactive: #1a1a1a !important;
+        --yt-spec-icon-active-other: #1a1a1a !important
+    }
+
+    /* Specific icon overrides */
+    #guide-icon,
+    .navigation-icon,
+    .guide-icon,
+    .history-button,
+    #menu-button
+    {
+        color: #1a1a1a !important;
+        --iron-icon-fill-color: #1a1a1a !important
+    }
+
+    /* Player bar controls - make sure they're all dark */
+    ytmusic-player-bar .left-controls-buttons paper-icon-button,
+    ytmusic-player-bar .left-controls-buttons yt-icon-button,
+    ytmusic-player-bar .previous-button,
+    ytmusic-player-bar .next-button,
+    ytmusic-player-bar .play-pause-button,
+    ytmusic-player-bar .shuffle,
+    ytmusic-player-bar .repeat,
+    ytmusic-player-bar .volume
+    {
+        color: #1a1a1a !important;
+        --iron-icon-fill-color: #1a1a1a !important
+    }
+
+    /* Time info text */
+    .time-info
+    {
+        color: #2a2a2a !important
+    }
+
+    /* Navigation pivot bar items */
+    ytmusic-pivot-bar-renderer .navigation-item
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Cast button */
+    ytmusic-cast-button tp-yt-paper-button
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Card Shelf Renderer - Artist pages and featured content - white background with black text */
+    ytmusic-card-shelf-renderer,
+    ytmusic-card-shelf-renderer .card-container,
+    ytmusic-card-shelf-renderer .card-content-container,
+    ytmusic-card-shelf-renderer .main-card-container
+    {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important
+    }
+
+    /* Card shelf header */
+    ytmusic-card-shelf-renderer #card-shelf-header,
+    ytmusic-card-shelf-renderer .header
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Card shelf title and subtitle - must be black */
+    ytmusic-card-shelf-renderer .title,
+    ytmusic-card-shelf-renderer .metadata-container .title,
+    ytmusic-card-shelf-renderer .details-container .title,
+    ytmusic-card-shelf-renderer yt-formatted-string.title
+    {
+        color: #000000 !important;
+        font-weight: 600 !important
+    }
+
+    ytmusic-card-shelf-renderer .subtitle,
+    ytmusic-card-shelf-renderer .subtitle-container,
+    ytmusic-card-shelf-renderer yt-formatted-string.subtitle
+    {
+        color: #3a3a3a !important
+    }
+
+    /* Immersive background overlay - only affect the background element, not thumbnails */
+    ytmusic-card-shelf-renderer #background .immersive-background,
+    ytmusic-fullbleed-thumbnail-renderer[is-background]
+    {
+        opacity: 0.1 !important;
+        filter: brightness(2) !important
+    }
+
+    /* Action buttons (Shuffle, Radio) on card shelf */
+    ytmusic-card-shelf-renderer #actions,
+    ytmusic-card-shelf-renderer .actions-container,
+    ytmusic-card-shelf-renderer yt-button-renderer,
+    ytmusic-card-shelf-renderer yt-button-shape
+    {
+        background-color: #f0f0f0 !important;
+        color: #1a1a1a !important;
+        border: 1px solid #d0d0d0 !important
+    }
+
+    ytmusic-card-shelf-renderer yt-button-renderer:hover,
+    ytmusic-card-shelf-renderer yt-button-shape:hover
+    {
+        background-color: #e0e0e0 !important
+    }
+
+    /* Button text */
+    ytmusic-card-shelf-renderer yt-button-renderer .yt-spec-button-shape-next__button-text-content,
+    ytmusic-card-shelf-renderer .button-text
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Navigation button (chevron) */
+    ytmusic-card-shelf-renderer .navigation-button,
+    ytmusic-card-shelf-renderer .main-action-container yt-icon-button
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Undercard content list - white background with black text */
+    ytmusic-card-shelf-renderer #undercards,
+    ytmusic-card-shelf-renderer .undercards-container-text
+    {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important
+    }
+
+    /* Responsive list items within card shelf */
+    ytmusic-responsive-list-item-renderer,
+    ytmusic-responsive-list-item-renderer .flex-columns,
+    ytmusic-responsive-list-item-renderer .left-items
+    {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important
+    }
+
+    /* List item hover state */
+    ytmusic-responsive-list-item-renderer:hover
+    {
+        background-color: #f8f8f8 !important
+    }
+
+    /* List item titles and text */
+    ytmusic-responsive-list-item-renderer .title-column,
+    ytmusic-responsive-list-item-renderer .title,
+    ytmusic-responsive-list-item-renderer yt-formatted-string.title
+    {
+        color: #1a1a1a !important
+    }
+
+    /* List item secondary text (artist, duration, etc.) */
+    ytmusic-responsive-list-item-renderer .secondary-flex-columns,
+    ytmusic-responsive-list-item-renderer .flex-column,
+    ytmusic-responsive-list-item-renderer yt-formatted-string:not(.title)
+    {
+        color: #4a4a4a !important
+    }
+
+    /* Play button overlay on thumbnails - make it transparent by default, visible on hover */
+    ytmusic-item-thumbnail-overlay-renderer
+    {
+        background: transparent !important;
+        opacity: 0 !important;
+        transition: opacity 0.2s ease !important
+    }
+
+    /* Show overlay only on hover - with semi-transparent background */
+    ytmusic-two-row-item-renderer:hover ytmusic-item-thumbnail-overlay-renderer,
+    ytmusic-responsive-list-item-renderer:hover ytmusic-item-thumbnail-overlay-renderer,
+    ytmusic-card-shelf-renderer:hover ytmusic-item-thumbnail-overlay-renderer
+    {
+        opacity: 1 !important;
+        background: rgba(0, 0, 0, 0.3) !important
+    }
+
+    /* Play button background */
+    ytmusic-item-thumbnail-overlay-renderer #content,
+    ytmusic-play-button-renderer
+    {
+        background: hsla(0, 0%, 0%, 0.3) !important
+    }
+
+    /* Play button icon - white for contrast */
+    ytmusic-play-button-renderer yt-icon,
+    ytmusic-play-button-renderer #icon
+    {
+        color: #ffffff !important;
+        fill: #ffffff !important
+    }
+
+    /* Explicit badge */
+    ytmusic-responsive-list-item-renderer ytmusic-inline-badge-renderer,
+    ytmusic-inline-badge-renderer.explicit-badge
+    {
+        color: #2a2a2a !important
+    }
+
+    /* Menu button on list items */
+    ytmusic-responsive-list-item-renderer ytmusic-menu-renderer,
+    ytmusic-responsive-list-item-renderer #top-level-buttons
+    {
+        color: #2a2a2a !important
+    }
+
+    /* Card shelf all text must be visible */
+    ytmusic-card-shelf-renderer *:not(yt-icon):not(tp-yt-iron-icon):not(svg)
+    {
+        color: inherit !important
+    }
+
+    /* Ensure all formatted strings in card shelf are black */
+    ytmusic-card-shelf-renderer yt-formatted-string,
+    ytmusic-responsive-list-item-renderer yt-formatted-string
+    {
+        color: #1a1a1a !important
+    }
+
+    /* Fix ALL thumbnails - ensure they display properly without filters */
+    /* Thumbnail renderer component */
+    ytmusic-thumbnail-renderer
+    {
+        filter: none !important;
+        opacity: 1 !important;
+        background: none !important;
+        background-color: transparent !important
+    }
+
+    /* yt-img-shadow component that wraps images */
+    yt-img-shadow
+    {
+        filter: none !important;
+        opacity: 1 !important;
+        background: none !important;
+        background-color: transparent !important
+    }
+
+    /* All img elements - CRITICAL for visibility */
+    img
+    {
+        filter: none !important;
+        opacity: 1 !important;
+        background: none !important
+    }
+
+    /* Image wrapper link in two-row items (album cards) */
+    ytmusic-two-row-item-renderer .image-wrapper,
+    ytmusic-two-row-item-renderer .image-wrapper > a
+    {
+        filter: none !important;
+        opacity: 1 !important;
+        background: transparent !important
+    }
+
+    /* Thumbnail containers across all contexts */
+    .thumbnail-container,
+    ytmusic-card-shelf-renderer .thumbnail-container,
+    ytmusic-responsive-list-item-renderer .thumbnail-container,
+    ytmusic-two-row-item-renderer .thumbnail-container
+    {
+        background: transparent !important;
+        background-color: transparent !important;
+        filter: none !important;
+        opacity: 1 !important
+    }
+
+    /* Thumbnail link in card shelf */
+    ytmusic-card-shelf-renderer .thumbnail-link,
+    .thumbnail-link
+    {
+        filter: none !important;
+        opacity: 1 !important;
+        background: transparent !important
+    }
+
+    /* Left items container in responsive list items */
+    ytmusic-responsive-list-item-renderer .left-items
+    {
+        filter: none !important;
+        opacity: 1 !important
+    }
+
+    /* Audio/Video toggle button - light mode styling - COMPREHENSIVE */
+    ytmusic-av-toggle,
+    ytmusic-av-toggle *,
+    ytmusic-av-toggle yt-button-shape,
+    ytmusic-av-toggle tp-yt-paper-button,
+    ytmusic-av-toggle button,
+    ytmusic-av-toggle .yt-spec-button-shape-next,
+    ytmusic-av-toggle .yt-spec-button-shape-next__button,
+    ytmusic-av-toggle a
+    {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #1a1a1a !important;
+        border: 1px solid #d0d0d0 !important;
+        border-radius: 18px !important
+    }
+
+    ytmusic-av-toggle:hover,
+    ytmusic-av-toggle:hover *,
+    ytmusic-av-toggle:hover button
+    {
+        background: #f5f5f5 !important;
+        background-color: #f5f5f5 !important
+    }
+
+    /* AV toggle text - all text elements */
+    ytmusic-av-toggle .yt-spec-button-shape-next__button-text-content,
+    ytmusic-av-toggle yt-formatted-string,
+    ytmusic-av-toggle span,
+    ytmusic-av-toggle .text
+    {
+        color: #1a1a1a !important;
+        background: transparent !important
+    }
+
+    /* AV toggle icons - all icon elements */
+    ytmusic-av-toggle yt-icon,
+    ytmusic-av-toggle tp-yt-iron-icon,
+    ytmusic-av-toggle svg,
+    ytmusic-av-toggle svg path
+    {
+        color: #1a1a1a !important;
+        fill: #1a1a1a !important;
+        background: transparent !important
+    }
+
+    /* Override any CSS variables that might affect the toggle */
+    ytmusic-av-toggle
+    {
+        --yt-spec-general-background-a: #ffffff !important;
+        --yt-spec-general-background-b: #ffffff !important;
+        --yt-spec-general-background-c: #ffffff !important;
+        --yt-spec-badge-chip-background: #ffffff !important;
+        --paper-button-ink-color: rgba(0, 0, 0, 0.1) !important
+    }
+
+    ytmusic-tabs.stuck
+    {
+        background-color: #ffffff !important;
+    }
+
+    ytmusic-background-promo-renderer[renderer-style=full-height] .promo-title.ytmusic-background-promo-renderer:not([hidden]), ytmusic-background-promo-renderer[renderer-style=adaptive-full-height] .promo-title.ytmusic-background-promo-renderer:not([hidden])
+    {
+        color: #1a1a1a !important;
+    }
+
+    ytmusic-background-promo-renderer
+    {
+        background-color: #ffffff !important;
     }
 
     /* REMOVE THIS LINE IF YOU WANT TO APPLY FONTS (Also replace FontName with a font you want to use (ex. HarmonyOS Sans)
