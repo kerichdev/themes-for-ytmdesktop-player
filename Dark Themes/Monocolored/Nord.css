@@ -1,0 +1,184 @@
+/*
+ * Nord theme for YouTube Music / Pear Desktop
+ * Palette: https://www.nordtheme.com/docs/colors-and-palettes
+ *
+ * YouTube Music derives almost every colour from the --ytmusic-color-* primitives
+ * declared on <html>, so the theme swaps those primitives and only patches the few
+ * places where the site hardcodes a colour.
+ */
+
+html:not(.style-scope) {
+    --nord0: #2e3440;
+    --nord1: #3b4252;
+    --nord2: #434c5e;
+    --nord3: #4c566a;
+    --nord3-bright: #616e88;
+    --nord4: #d8dee9;
+    --nord5: #e5e9f0;
+    --nord6: #eceff4;
+    --nord7: #8fbcbb;
+    --nord8: #88c0d0;
+    --nord9: #81a1c1;
+    --nord10: #5e81ac;
+    --nord11: #bf616a;
+    --nord12: #d08770;
+    --nord13: #ebcb8b;
+    --nord14: #a3be8c;
+    --nord15: #b48ead;
+
+    --nord0-rgb: 46, 52, 64;
+    --nord4-rgb: 216, 222, 233;
+    --nord6-rgb: 236, 239, 244;
+    --nord8-rgb: 136, 192, 208;
+    --nord11-rgb: 191, 97, 106;
+
+    --ytmusic-color-black4: var(--nord0) !important;
+    --ytmusic-color-black2: var(--nord1) !important;
+    --ytmusic-color-black1: var(--nord1) !important;
+    --ytmusic-color-blackpure: var(--nord0) !important;
+    --ytmusic-color-blackpure-alpha0: rgba(var(--nord0-rgb), 0) !important;
+    --ytmusic-color-blackpure-alpha10: rgba(var(--nord0-rgb), 0.1) !important;
+    --ytmusic-color-blackpure-alpha60: rgba(var(--nord0-rgb), 0.6) !important;
+    --ytmusic-color-blackpure-alpha65: rgba(var(--nord0-rgb), 0.65) !important;
+    --ytmusic-color-black-opacity-0-4: rgba(var(--nord0-rgb), 0.4) !important;
+    --ytmusic-color-navyblue: var(--nord1) !important;
+    --ytmusic-opalescence-dark-grey: var(--nord2) !important;
+    --ytmusic-white-5: var(--nord3) !important;
+    --ytmusic-fullscreen-scrim-background: rgba(var(--nord0-rgb), 0.6) !important;
+
+    --ytmusic-color-white1: var(--nord6) !important;
+    --ytmusic-color-white1-alpha10: rgba(var(--nord6-rgb), 0.1) !important;
+    --ytmusic-color-white1-alpha15: rgba(var(--nord6-rgb), 0.15) !important;
+    --ytmusic-color-white1-alpha20: rgba(var(--nord6-rgb), 0.2) !important;
+    --ytmusic-color-white1-alpha25: rgba(var(--nord6-rgb), 0.25) !important;
+    --ytmusic-color-white1-alpha30: rgba(var(--nord6-rgb), 0.3) !important;
+    --ytmusic-color-white1-alpha50: rgba(var(--nord6-rgb), 0.5) !important;
+    --ytmusic-color-white1-alpha70: rgba(var(--nord6-rgb), 0.7) !important;
+    --ytmusic-color-white1-alpha95: rgba(var(--nord6-rgb), 0.95) !important;
+    --ytmusic-color-white-opacity-0-05: rgba(var(--nord6-rgb), 0.05) !important;
+    --ytmusic-color-white-opacity-0-5: rgba(var(--nord6-rgb), 0.5) !important;
+    --ytmusic-color-grey-4: var(--nord5) !important;
+    --ytmusic-color-grey2: var(--nord4) !important;
+    --ytmusic-color-grey3: rgba(var(--nord4-rgb), 0.6) !important;
+    --ytmusic-color-grey4: var(--nord3-bright) !important;
+    --ytmusic-color-grey5: var(--nord3) !important;
+
+    --ytmusic-color-lightblue: var(--nord8) !important;
+    --ytmusic-color-blue-1: var(--nord10) !important;
+    --ytmusic-color-lightred: var(--nord11) !important;
+    --ytmusic-color-mediumred: var(--nord11) !important;
+    --ytmusic-color-mediumred-alpha90: rgba(var(--nord11-rgb), 0.9) !important;
+    --ytmusic-color-youtubered: var(--nord11) !important;
+    --ytmusic-color-lightgreen: var(--nord14) !important;
+    --ytmusic-color-green-1: var(--nord14) !important;
+    --ytmusic-color-lightteal: var(--nord7) !important;
+    --ytmusic-color-yellow: var(--nord13) !important;
+
+    /* Derived tokens that YTM hardcodes instead of deriving from the primitives */
+    --ytmusic-brand-background-solid: var(--nord1) !important;
+    --ytmusic-player-bar-background: var(--nord1) !important;
+    --ytmusic-search-background: var(--nord1) !important;
+    --ytmusic-dialog-background-color: var(--nord1) !important;
+    --ytmusic-dropdown-background: var(--nord1) !important;
+    --ytmusic-dropdown-item-hover-background: var(--nord2) !important;
+    --ytmusic-horizontal-action-card-background: var(--nord1) !important;
+    --ytmusic-guide-hover: rgba(var(--nord6-rgb), 0.1) !important;
+    --ytmusic-play-pause-button-background: var(--nord6) !important;
+    --ytmusic-toggle-button-chip-active-background: var(--nord8) !important;
+    --ytmusic-setting-item-toggle-active: var(--nord8) !important;
+    --ytmusic-inverted-background: var(--nord6) !important;
+    --ytmusic-text-primary-inverse: var(--nord0) !important;
+
+    /* Material-era tokens (used when YTM flips html[music-web-color-migration]) */
+    --yt-sys-color-baseline--base-background: var(--nord0) !important;
+    --yt-sys-color-baseline--raised-background: var(--nord1) !important;
+    --yt-sys-color-baseline--menu-background: var(--nord1) !important;
+    --yt-sys-color-baseline--general-background-a: var(--nord1) !important;
+    --yt-sys-color-baseline--general-background-b: var(--nord1) !important;
+    --yt-sys-color-baseline--general-background-c: var(--nord0) !important;
+    --yt-sys-color-baseline--inverted-background: var(--nord6) !important;
+    --yt-sys-color-baseline--additive-background: rgba(var(--nord6-rgb), 0.1) !important;
+    --yt-sys-color-baseline--outline: rgba(var(--nord6-rgb), 0.2) !important;
+    --yt-sys-color-baseline--overlay-background-medium: rgba(var(--nord0-rgb), 0.6) !important;
+    --yt-sys-color-baseline--text-primary: var(--nord6) !important;
+    --yt-sys-color-baseline--text-primary-inverse: var(--nord0) !important;
+    --yt-sys-color-baseline--text-secondary: var(--nord4) !important;
+    --yt-sys-color-baseline--text-disabled: var(--nord3-bright) !important;
+    --yt-sys-color-baseline--icon-inactive: rgba(var(--nord4-rgb), 0.6) !important;
+    --yt-sys-color-baseline--icon-disabled: var(--nord3) !important;
+    --yt-sys-color-baseline--call-to-action: var(--nord8) !important;
+    --yt-sys-color-baseline--call-to-action-inverse: var(--nord10) !important;
+    --yt-sys-color-baseline--suggested-action: var(--nord2) !important;
+    --yt-sys-color-baseline--touch-response: var(--nord6) !important;
+    --yt-sys-color-baseline--wordmark-text: var(--nord6) !important;
+    --yt-sys-color-baseline--error-indicator: var(--nord11) !important;
+    --yt-sys-color-baseline--static-brand-red: var(--nord11) !important;
+    --yt-sys-color-baseline--themed-blue: var(--nord8) !important;
+    --yt-sys-color-baseline--themed-green: var(--nord14) !important;
+    --yt-sys-color-baseline--brand-link-text: var(--nord11) !important;
+
+    --paper-toggle-button-checked-bar-color: var(--nord8) !important;
+    --paper-toggle-button-checked-button-color: var(--nord8) !important;
+    --paper-toggle-button-checked-ink-color: var(--nord8) !important;
+    --paper-slider-active-color: var(--nord8) !important;
+    --paper-slider-knob-color: var(--nord8) !important;
+    --paper-spinner-color: var(--nord8) !important;
+
+    --ytd-scrollbar-scrubber_-_background: var(--nord3) !important;
+}
+
+body {
+    background: var(--nord0) !important;
+}
+
+::selection {
+    background: rgba(var(--nord8-rgb), 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--nord3) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--nord3-bright) !important;
+}
+
+ytmusic-browse-response[has-background]:not([disable-gradient]) .background-gradient.ytmusic-browse-response {
+    background-image: linear-gradient(to bottom, rgba(var(--nord0-rgb), 0.6), var(--ytmusic-background)) !important;
+}
+
+#progress-bar.ytmusic-player-bar {
+    --paper-slider-active-color: var(--nord8) !important;
+    --paper-slider-container-color: rgba(var(--nord6-rgb), 0.2) !important;
+    --paper-slider-knob-color: var(--nord8) !important;
+    --paper-slider-knob-start-color: var(--nord8) !important;
+    --paper-slider-knob-start-border-color: var(--nord8) !important;
+}
+
+.volume-slider.ytmusic-player-bar,
+.expand-volume-slider.ytmusic-player-bar {
+    --paper-slider-container-color: rgba(var(--nord6-rgb), 0.2) !important;
+    --paper-slider-active-color: var(--nord8) !important;
+    --paper-slider-knob-color: var(--nord8) !important;
+}
+
+#selectionBar.tp-yt-paper-tabs {
+    border-bottom: 2px solid var(--nord8) !important;
+}
+
+tp-yt-paper-tab.iron-selected.ytmusic-player-page {
+    color: var(--nord8) !important;
+}
+
+ytmusic-subscribe-button-renderer {
+    --ytmusic-subscribe-button-color: var(--nord10) !important;
+}
+
+a.ytmusic-content-update-chip {
+    color: var(--nord0) !important;
+    background-color: var(--nord8) !important;
+}
+
+.category-menu-item.iron-selected.ytmusic-settings-page {
+    background-color: var(--nord2) !important;
+}

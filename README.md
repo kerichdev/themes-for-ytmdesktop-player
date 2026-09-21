@@ -27,6 +27,8 @@ As well as user submitted ones:
 
 * [Sweetified YTM](https://github.com/kerichdev/themes-for-ytmdesktop-player/tree/main#Sweetified-YTM)
 
+* [Nord](https://github.com/kerichdev/themes-for-ytmdesktop-player/tree/main#Nord)
+
 ## Installation
 
 ### No client
@@ -138,3 +140,9 @@ Assuming you have the latest build with the theme selection menu, open the app, 
 ![White Gold](https://i.ibb.co/L5RjRbr/image.png "Sweetified YTM")
 
 [Get it here](https://github.com/kerichdev/themes-for-ytmdesktop-player/blob/main/Dark%20Themes/Blackout/Sweetified%20YTM.css)
+
+### Nord
+
+![Nord](screenshots/Nord.png "Nord")
+
+[Get it here](https://github.com/kerichdev/themes-for-ytmdesktop-player/blob/main/Dark%20Themes/Monocolored/Nord.css)
